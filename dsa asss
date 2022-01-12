@@ -1,0 +1,41 @@
+
+class BinaryTress{
+    public static void main(Strings[] args){
+        Scanner in= new Scanner();
+        int num= in.nextInt();
+        console.log(BSTsmallcount(root,num))
+
+    }
+    public int BSTsmallcount(BinNode root, int num){
+    int count = 0;
+    if(root ==null){
+        return 0;
+    }else if (root.value() < num){
+        count++;
+        count+= BSTsmallcount(root.left(),num);
+        count+= BSTsmallcount(root.right(),num);
+
+    }else{
+        count += BSTsmallcount(root.left(),num);
+    }
+    return count;
+}
+}
+ class BinNode {
+      int x;
+      Node left, right;
+
+      Node(int value) {
+          this.value = value;
+          this.left = null;
+          this.right = null;
+      }
+
+
+
+// In this method we have used recurrsion to map to every single node of the BST to compare the given value to value of the each node 
+// Since we are comparing with each of the node the time Complexity we will be O(n), and since we are not using any data structure for solving this problem the 
+ // space Complexity will be contstant.
+
+
+
